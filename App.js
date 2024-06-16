@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Text, View } from "react-native";
+import { useFonts } from "expo-font";
+import HomeScreen from "./src/dashboard";
+import Source from "./src";
+import { PaperProvider } from "react-native-paper";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    TwemojiMozilla: require("./assets/font/Poppins-Bold.ttf"),
+    "Lato-Bold": require("./assets/font/Lato-Bold.ttf"),
+    "Josefin-Bold": require("./assets/font/JosefinSans-Bold.ttf"),
+    "Poppins-Regular": require("./assets/font/Poppins-Regular.ttf"),
+    "Poppins-Bold": require("./assets/font/Poppins-Bold.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return (
+      <View className="flex-1 justify-around flex-col">
+        <Text>text</Text>
+      </View>
+    );
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <View
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        className="bg-red-400"
+      >
+        <Source />
+      </View>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
