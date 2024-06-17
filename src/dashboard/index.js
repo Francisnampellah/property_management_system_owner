@@ -7,6 +7,7 @@ import Input from "./input";
 import { width } from "react-native-dimension";
 import CustomTabBar from "../../component/costume_tab_bar";
 import Top_navigation from "../../component/top_navigation";
+import { colors } from "../../constants/color";
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 const RecentsRoute = () => <Text>Recents</Text>;
@@ -50,7 +51,14 @@ const Layout = ({ navigation }) => {
   }, [index]);
 
   return (
-    <View style={{ display: "flex", flex: 1, width: "100%" }}>
+    <View
+      style={{
+        display: "flex",
+        flex: 1,
+        width: "100%",
+        backgroundColor: colors.background,
+      }}
+    >
       <Top_navigation />
       <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
         <BottomNavigation

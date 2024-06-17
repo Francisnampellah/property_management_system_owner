@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import HomeScreen from "./src/dashboard";
 import Source from "./src";
 import { PaperProvider } from "react-native-paper";
+import { colors } from "./constants/color";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,8 +25,12 @@ export default function App() {
   return (
     <PaperProvider>
       <View
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        className="bg-red-400"
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: colors.background,
+        }}
       >
         <Source />
       </View>

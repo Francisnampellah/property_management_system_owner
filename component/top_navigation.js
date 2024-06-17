@@ -3,16 +3,20 @@ import { View, Text } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { width } from "react-native-dimension";
 import { TextInput } from "react-native-paper";
+import { colors } from "../constants/color";
 
 export default function Top_navigation() {
   return (
-    <View className="flex w-full justify-center items-center p-4 pt-16 ">
+    <View
+      style={{ backgroundColor: colors.background }}
+      className="flex w-full justify-center items-center px-8 pt-16 "
+    >
       <View className="flex flex-row w-full justify-between items-center ">
-        <View className="flex-col">
-          <Text className="text-xl" style={{ fontFamily: "Poppins-Boldi" }}>
+        <View className="flex-col p-4">
+          <Text className="text-xl" style={{ fontFamily: "Poppins-Bold" }}>
             Welcome Mr
           </Text>
-          <Text className="text-3xl" style={{ fontFamily: "Poppins-Regular" }}>
+          <Text className="text-3xl " style={{ fontFamily: "Poppins-Regular" }}>
             Nampellah
           </Text>
         </View>
@@ -21,7 +25,7 @@ export default function Top_navigation() {
         </View>
       </View>
 
-      <View className="flex w-full justify-center items-center">
+      <View className="flex w-full justify-center p-4 items-center">
         <TextInput
           mode="outlined"
           outlineStyle={{
