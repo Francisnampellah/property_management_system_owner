@@ -1,26 +1,44 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, AntDesign } from "@expo/vector-icons";
 import { width } from "react-native-dimension";
 import { TextInput } from "react-native-paper";
 import { colors } from "../constants/color";
 import Search_card from "./search_card";
+import { TouchableOpacity } from "react-native";
 
-export default function Top_navigation() {
+export default function Top_navigation({ navigation, goBack = true }) {
   return (
     <View
       style={{ backgroundColor: colors.background }}
-      className="flex w-full justify-center items-center px-8 pt-16 "
+      className="flex w-full justify-center items-center px-8 pt-12 "
     >
       <View className="flex flex-row w-full justify-between items-center ">
-        <View className="flex-col p-4">
-          <Text className="text-xl" style={{ fontFamily: "Poppins-Bold" }}>
-            Welcome Mr
-          </Text>
-          <Text className="text-3xl " style={{ fontFamily: "Poppins-Regular" }}>
-            Nampellah
-          </Text>
+        <View>
+          <View className="self-start">
+            {goBack && (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.goBack();
+                }}
+              >
+                <AntDesign name="arrowleft" size={24} color="black" />
+              </TouchableOpacity>
+            )}
+          </View>
+          <View className="flex-col p-2">
+            <Text className="text-xl" style={{ fontFamily: "Poppins-Bold" }}>
+              Welcome Mr
+            </Text>
+            <Text
+              className="text-3xl "
+              style={{ fontFamily: "Poppins-Regular" }}
+            >
+              Nampellah
+            </Text>
+          </View>
         </View>
+
         <View>
           <Entypo name="notification" size={24} color="black" />
         </View>

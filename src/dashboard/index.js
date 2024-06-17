@@ -8,7 +8,8 @@ import { width } from "react-native-dimension";
 import CustomTabBar from "../../component/costume_tab_bar";
 import Top_navigation from "../../component/top_navigation";
 import { colors } from "../../constants/color";
-import Forms from "./forms.js";
+import Forms from "./forms/index.js";
+import Add_property from "./forms/add_property.js";
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 const RecentsRoute = () => <Text>Recents</Text>;
@@ -23,7 +24,7 @@ const Layout = ({ navigation }) => {
       focusedIcon: "home",
       unfocusedIcon: "home-outline",
     },
-    { key: "albums", title: "Albums", focusedIcon: "album" },
+    { key: "albums", title: "Albums", focusedIcon: "plus" },
     { key: "recents", title: "Recents", focusedIcon: "history" },
   ]);
 
@@ -53,7 +54,7 @@ const Layout = ({ navigation }) => {
         backgroundColor: colors.background,
       }}
     >
-      <Top_navigation />
+      <Top_navigation navigation={navigation} />
       <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
         <BottomNavigation
           navigationState={{ index, routes }}

@@ -10,5 +10,5 @@ export const colors = {
   success: "#00FF00",
   warning: "#FFA500",
   elevated: "#F5F5F5",
-  borderColor: "rgba(0,0,0,0.2)",
+  borderColor: "rgba(0,0,0,0.1)",
 };

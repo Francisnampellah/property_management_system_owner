@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./dashboard";
 import { View } from "react-native";
+import { colors } from "../constants/color";
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export default function Source() {
           display: "flex",
           flex: 1,
           width: "100%",
+          backgroundColor:colors.background
         }}
       >
         <Stack.Navigator

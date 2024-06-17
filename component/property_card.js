@@ -6,7 +6,7 @@ import { colors } from "../constants/color";
 export default function Property_card() {
   return (
     <View
-      className="flex my-2 px-4 py-6 flex-row rounded-3xl h-fit items-center"
+      className="flex my-2 px-4 py-4 flex-row rounded-3xl h-fit items-center"
       style={{
         backgroundColor: colors.background,
         borderColor: colors.borderColor,

@@ -85,8 +85,8 @@ const Home = () => {
           <Text className="text-lg font-bold mb-2">Recent Properties</Text>
 
           <View>
-            {barData.map(() => {
-              return <Property_card />;
+            {barData.map((index) => {
+              return <Property_card key={index} />;
             })}
           </View>
         </View>
