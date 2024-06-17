@@ -60,7 +60,7 @@ const Home = () => {
       </View>
 
       <View className="flex w-full px-8 py-2">
-        <View className="flex flex-row bg-blue-700 rounded-xl p-4 items-center justify-around">
+        <View className="flex flex-row bg-blue-700 rounded-3xl p-4 items-center justify-around">
           <View className="flex items-center">
             <Text className="text-white text-lg font-semibold">Tenants</Text>
             <Text className="text-white text-xl font-bold mt-1">360</Text>
@@ -74,7 +74,14 @@ const Home = () => {
       </View>
 
       <View id="recent prop" className="flex w-full mt-4 px-4">
-        <View className="bg-white rounded-xl p-4">
+        <View
+          className="rounded-3xl p-4"
+          style={{
+            backgroundColor: colors.elevated,
+            borderWidth: 1,
+            borderColor: colors.borderColor,
+          }}
+        >
           <Text className="text-lg font-bold mb-2">Recent Properties</Text>
 
           <View>

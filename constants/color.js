@@ -1,7 +1,7 @@
 export const colors = {
   primary: "#177AD5",
   secondary: "#E9E9EC",
-  background: "#F5F5F5",
+  background: "#Ffff",
   text: "#333333",
   white: "#FFFFFF",
   black: "#000000",
@@ -10,4 +10,5 @@ export const colors = {
   success: "#00FF00",
   warning: "#FFA500",
   elevated: "#F5F5F5",
+  borderColor: "rgba(0,0,0,0.2)",
 };

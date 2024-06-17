@@ -8,6 +8,7 @@ import { width } from "react-native-dimension";
 import CustomTabBar from "../../component/costume_tab_bar";
 import Top_navigation from "../../component/top_navigation";
 import { colors } from "../../constants/color";
+import Forms from "./forms.js";
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 const RecentsRoute = () => <Text>Recents</Text>;
@@ -19,24 +20,17 @@ const Layout = ({ navigation }) => {
     {
       key: "music",
       title: "Favorites",
-      focusedIcon: "heart",
-      unfocusedIcon: "heart-outline",
+      focusedIcon: "home",
+      unfocusedIcon: "home-outline",
     },
     { key: "albums", title: "Albums", focusedIcon: "album" },
     { key: "recents", title: "Recents", focusedIcon: "history" },
-    {
-      key: "notifications",
-      title: "Notifications",
-      focusedIcon: "bell",
-      unfocusedIcon: "bell-outline",
-    },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
     music: Home,
-    albums: Input,
+    albums: Forms,
     recents: RecentsRoute,
-    notifications: NotificationsRoute,
   });
 
   // Animated value for transition
@@ -66,6 +60,7 @@ const Layout = ({ navigation }) => {
           onIndexChange={setIndex}
           renderScene={renderScene}
           labeled={false}
+          barStyle={{ backgroundColor: colors.background }}
         />
       </Animated.View>
     </View>

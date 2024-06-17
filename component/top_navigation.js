@@ -4,6 +4,7 @@ import { Entypo } from "@expo/vector-icons";
 import { width } from "react-native-dimension";
 import { TextInput } from "react-native-paper";
 import { colors } from "../constants/color";
+import Search_card from "./search_card";
 
 export default function Top_navigation() {
   return (
@@ -38,10 +39,16 @@ export default function Top_navigation() {
           style={{
             fontFamily: "Poppins-Bold",
             width: width(80),
-            borderRadius: 50,
+            borderRadius: 24,
           }}
-          left={<Entypo name="eye" size={24} color="black" />}
+          left={<TextInput.Icon icon={"eye"} />}
         />
+      </View>
+
+      <View className="flex w-full flex-row justify-between mb-4">
+        <Search_card value={"lease"} />
+        <Search_card value={"Tenants"} />
+        <Search_card value={"Properties"} />
       </View>
     </View>
   );
