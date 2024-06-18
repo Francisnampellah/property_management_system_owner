@@ -1,22 +1,22 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import { View, Text, Animated, StyleSheet } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { BottomNavigation, TextInput } from "react-native-paper";
 import Home from "./home";
-import Input from "./input";
 import { width } from "react-native-dimension";
 import CustomTabBar from "../../component/costume_tab_bar";
 import Top_navigation from "../../component/top_navigation";
 import { colors } from "../../constants/color";
 import Forms from "./forms/index.js";
-import Add_property from "./forms/add_property.js";
-
-const AlbumsRoute = () => <Text>Albums</Text>;
+import { MyContext } from "../../hooks/context_provider.js";
+import Search_screen from "../../component/search_screen.js";
 const RecentsRoute = () => <Text>Recents</Text>;
-const NotificationsRoute = () => <Text>Notifications</Text>;
 
 const Layout = ({ navigation }) => {
   const [index, setIndex] = React.useState(0);
+
+  const { activeSearch, setActiveSearch } = useContext(MyContext);
+  
   const [routes] = React.useState([
     {
       key: "music",
@@ -55,15 +55,20 @@ const Layout = ({ navigation }) => {
       }}
     >
       <Top_navigation navigation={navigation} />
-      <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
-        <BottomNavigation
-          navigationState={{ index, routes }}
-          onIndexChange={setIndex}
-          renderScene={renderScene}
-          labeled={false}
-          barStyle={{ backgroundColor: colors.background }}
-        />
-      </Animated.View>
+
+      {activeSearch ? (
+        <Search_screen />
+      ) : (
+        <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
+          <BottomNavigation
+            navigationState={{ index, routes }}
+            onIndexChange={setIndex}
+            renderScene={renderScene}
+            labeled={false}
+            barStyle={{ backgroundColor: colors.background }}
+          />
+        </Animated.View>
+      )}
     </View>
   );
 };

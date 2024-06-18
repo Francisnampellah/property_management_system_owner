@@ -10,5 +10,6 @@ export const colors = {
   success: "#00FF00",
   warning: "#FFA500",
   elevated: "#F5F5F5",
+  active: "#cccccc",
   borderColor: "rgba(0,0,0,0.1)",
 };
